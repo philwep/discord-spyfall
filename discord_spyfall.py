@@ -8,6 +8,11 @@ import asyncio
 import random
 import os
 
+class player:
+    def __init__ (self, discord_user_name, spyfall_role):
+        self.name = discord_user_name
+        self.role = None
+
 def get_data(spyfall_filename):
     '''
 
