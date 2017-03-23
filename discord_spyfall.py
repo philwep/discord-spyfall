@@ -1,5 +1,6 @@
 """ March 09, 2017
-@author: Phillip Le, philliple1337@gmail.com
+@author: Phillip Le
+@author: Fabio Colacio
 """
 
 import discord
@@ -8,6 +9,9 @@ import random
 import os
 
 def get_data(spyfall_filename):
+    '''
+
+    '''
     if os.path.exists(spyfall_filename):
         with open(spyfall_filename, 'r') as data_file:
             lines = data_file.readlines()  # read all lines from the file into a list
