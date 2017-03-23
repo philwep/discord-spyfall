@@ -8,6 +8,11 @@ import asyncio
 import random
 import os
 
+class game:
+    def __init__ (self):
+        self.players = []
+        self.location = None
+
 class player:
     def __init__ (self, discord_user_name, spyfall_role):
         self.name = discord_user_name
