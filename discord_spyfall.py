@@ -13,7 +13,17 @@ from game import game
 
 def get_data(spyfall_filename):
     '''
+    Parses a .csv file
 
+    Args:
+        spyfall_filename: .csv file to be opened and parsed into a dictionary that has keys as location names and values as a list that contains all the roles
+
+    Returns:
+        A list that has a dictionary pointing to a list
+
+        Example Output:
+
+            [location_name:[role_1, role_2, role_3]]
     '''
     if os.path.exists(spyfall_filename):
         with open(spyfall_filename, 'r') as data_file:
