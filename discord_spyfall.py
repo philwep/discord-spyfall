@@ -7,9 +7,16 @@ import discord
 import asyncio
 import random
 import os
+import json
 
 from player import player
 from game import game
+
+with open('config.json', 'r') as configuration_file:
+    configuration_file = json.load(configuration_file)
+
+discord_token = configuration_file['discord']['token']
+debug = configuration_file['other']['debug']
 
 
 def get_data(spyfall_filename):

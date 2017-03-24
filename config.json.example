@@ -1,0 +1,8 @@
+{
+    "discord":{
+        "token": "YOURTOKENKEYHERE!"
+    },
+    "other":{
+        "debug": false
+    }
+}
