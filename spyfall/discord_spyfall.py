@@ -9,8 +9,8 @@ import random
 import os
 import json
 
-from player import player
-from game import game
+from player import Player
+from game import Game
 
 # open the config file
 with open('config.json', 'r') as configuration_file:
