@@ -49,7 +49,7 @@ def get_current_roles(spyfall_data, current_location):
 
     return current_roles
 
-def main():
+async def main():
     spyfall_data = get_data('spyfall_data.csv')
 
     locations = []
