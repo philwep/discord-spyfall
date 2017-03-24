@@ -3,6 +3,7 @@
 @author: Fabio Colacio
 """
 
+
 import discord
 import asyncio
 import random
@@ -18,6 +19,11 @@ with open('config.json', 'r') as configuration_file:
 
 discord_token = configuration_file['discord']['token']
 debug = configuration_file['other']['debug']
+
+with open('spyfall_locations.json', 'r') as locations_file:
+    locations_file = json.load(locations_file)
+
+print(locations_file)
 
 
 def get_data(spyfall_filename):
@@ -71,7 +77,7 @@ def get_current_roles(spyfall_data, current_location):
 
     return current_roles
 
-async def main():
+def main():
     '''
     Default run script
 
