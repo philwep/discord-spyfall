@@ -1,47 +1,53 @@
 {
-        "The Bank":[
-            "Robber",
-            "Teller",
-            "Civilian",
-            "Armored Truck Driver",
-            "Security Guard",
-            "Manager"
-        ],
-        "Airplane":[
-            "First Class Passenger",
-            "Air Marshall",
-            "Mechanic",
-            "Air Hostess",
-            "Flight Attendant",
-            "Co-Pilot",
-            "Captain",
-            "Econonmy Class Passenger"
-        ],
-        "Beach":[
-            "Beach Waitress",
-            "Kite Surfer",
-            "Lifeguard",
-            "Thief",
-            "Beach Photographer",
-            "Ice Cream Truck Driver",
-            "Beach Goer"
-        ],
-        "Catheral / Church":[
-            "Priest",
-            "Beggar",
-            "Sinner",
-            "Tourst",
-            "Sponsor",
-            "Choir Member",
-            "Father"
-        ],
-        "Circus Tent":[
-            "Arcobat",
-            "Animal Trainer",
-            "Magician",
-            "Fire Eater",
-            "Clown",
-            "Juggler",
-            "Visitor"
-        ]
+    "The Bank":[
+        "Robber",
+        "Teller",
+        "Civilian",
+        "Armored Truck Driver",
+        "Security Guard",
+        "Manager"
+    ],
+    "Airplane":[
+        "First Class Passenger",
+        "Air Marshall",
+        "Mechanic",
+        "Air Hostess",
+        "Flight Attendant",
+        "Co-Pilot",
+        "Captain",
+        "Econonmy Class Passenger"
+    ],
+    "Beach":[
+        "Beach Waitress",
+        "Kite Surfer",
+        "Lifeguard",
+        "Thief",
+        "Beach Photographer",
+        "Ice Cream Truck Driver",
+        "Beach Goer"
+    ],
+    "Catheral / Church":[
+        "Priest",
+        "Beggar",
+        "Sinner",
+        "Tourst",
+        "Sponsor",
+        "Choir Member",
+        "Father"
+    ],
+    "Circus Tent":[
+        "Arcobat",
+        "Animal Trainer",
+        "Magician",
+        "Fire Eater",
+        "Clown",
+        "Juggler",
+        "Visitor"
+    ],
+    "Corporate Party":[
+        "Entertainer",
+        "Manager",
+        "Assistant to the manager",
+        "Unwanted Guest",
+    ]
 }
