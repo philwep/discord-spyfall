@@ -12,6 +12,7 @@ import json
 from player import player
 from game import game
 
+# open the config file
 with open('config.json', 'r') as configuration_file:
     configuration_file = json.load(configuration_file)
 
