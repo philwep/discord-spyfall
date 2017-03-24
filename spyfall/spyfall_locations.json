@@ -26,6 +26,24 @@
             "Beach Photographer",
             "Ice Cream Truck Driver",
             "Beach Goer"
+        ],
+        "Catheral / Church":[
+            "Priest",
+            "Beggar",
+            "Sinner",
+            "Tourst",
+            "Sponsor",
+            "Choir Member",
+            "Father"
+        ],
+        "Circus Tent":[
+            "Arcobat",
+            "Animal Trainer",
+            "Magician",
+            "Fire Eater",
+            "Clown",
+            "Juggler",
+            "Visitor"
         ]
     }
 }
