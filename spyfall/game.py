@@ -16,6 +16,9 @@ class Game:
         # locations and roles
         self.locations_file = []
 
+        # location names
+        self.location_names = []
+
     def end_game(self):
         for player in self.players:
             if (player.role == "spy"):
@@ -44,19 +47,19 @@ class Game:
             else:
                 cur_role += 1
 
-    def get_locations(self, file_name):
+    def get_location(self, file_name):
         if os.path.exists(file_name):
             with open(file_name, 'r') as locations_file:
                 self.locations_file = json.load(locations_file)
+
+            for location in self.locations_file:
+                self.location_names.append(location)
         else:
             print("The file %s does not exist or cannot be opened" % file_name)
 
     def get_roles(self, cur_location):
         roles = self.locations_file[cur_location]
         return roles
-
-        # for roles i
-
 
     def start_game(self):
         self.assign_roles()
