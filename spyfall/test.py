@@ -2,8 +2,10 @@ import game
 
 test = game.Game()
 
-test.get_roles('spyfall_locations.json')
+test.get_locations('spyfall_locations.json')
 
 why = test.locations_file
 
-print(why)
+hello = test.get_roles('Beach')
+
+print(hello)

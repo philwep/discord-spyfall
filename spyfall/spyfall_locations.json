@@ -1,5 +1,4 @@
 {
-    "locations":{
         "The Bank":[
             "Robber",
             "Teller",
@@ -45,5 +44,4 @@
             "Juggler",
             "Visitor"
         ]
-    }
 }
