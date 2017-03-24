@@ -11,6 +11,7 @@ import os
 from player import player
 from game import game
 
+
 def get_data(spyfall_filename):
     '''
     Parses a .csv file
@@ -39,7 +40,20 @@ def get_data(spyfall_filename):
 
 
 def get_current_roles(spyfall_data, current_location):
+    '''
+    Get a list of roles for a location
 
+    Args:
+        spyfall_data: list object containing all necessary information for locations and roles
+        current_location: variable object containg the current location of the game
+
+    Returns:
+        using the current_location and spyfall_data objects it returns the roles cooresponding to that location, and shuffles the list for randomization
+
+        Example Output:
+
+            [role_2, role_1, role_3, role_4, role_6, role_5]
+    '''
     current_roles = []
     for role in spyfall_data[current_location]:
         current_roles.append(role)
@@ -50,6 +64,10 @@ def get_current_roles(spyfall_data, current_location):
     return current_roles
 
 async def main():
+    '''
+    Default run script
+
+    '''
     spyfall_data = get_data('spyfall_data.csv')
 
     locations = []
