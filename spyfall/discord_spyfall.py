@@ -44,10 +44,9 @@ async def on_message(message):
 
         print(game.players)
 
-
     if message_content.startswith(bot_trigger + 'startgame'):
         game.start_game()
 
         for player in game.players:
-            await bot.send_message(235215311144484864, "Name: <@%s>\n Role:%s" %(player.name, player.role))
+            await bot.send_message(discord.User(id=player.name), "Name: <@%s>\n Role:%s" %(player.name, player.role))
 bot.run(bot_token)
