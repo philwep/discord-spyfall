@@ -7,8 +7,8 @@ game.join_player("other person")
 game.start_game()
 
 print("Location: %s" % game._game_data['locations'][game.location]['Location'])
+print("Roles: %s" % game._game_data['locations'][game.location]['Roles'])
 
-game.leave_player("bob")
 
 print("Players:")
 for player in game.players:

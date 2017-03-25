@@ -1,5 +1,5 @@
 from player import Player
-from random import randint
+import random
 import sys
 import os
 import json
@@ -52,7 +52,7 @@ class Game:
     def assign_location(self):
         if (self._game_data != None):
             locations = self._game_data['locations']
-            self.location = randint(0,len(locations)-1)
+            self.location = random.randint(0,len(locations)-1)
         else:
             self._load_data()
             self.assign_location()
@@ -60,15 +60,17 @@ class Game:
     # assign random roles to each player
     def assign_roles(self):
         if (self.location != None):
-            spy = randint(0,len(self.players)-1)
+            spy = random.randint(0,len(self.players)-1)
             self.players[spy].role = "Spy"
 
             roles = self._game_data['locations'][self.location]['Roles']
+            for i in range(random.randint(0,10)):
+                random.shuffle(roles)
             cur_role = 0
             for player in self.players:
                 if (player.role != "Spy"):
                     player.role = roles[cur_role]
-                    if (cur_role >= len(roles)-1):
+                    if (cur_role <= len(roles)-1):
                         cur_role += 1
                     else:
                         cur_role = 0
