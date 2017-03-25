@@ -5,5 +5,9 @@ game.join_player("bob")
 game.join_player("phil")
 game.join_player("other person")
 game.start_game()
-print(game.location)
-print(game.players)
+
+print("Location: %s" % game._game_data['locations'][game.location]['Location'])
+
+print("Players:")
+for player in game.players:
+    print("\tName:%s Role:%s" % (player.name, player.role))
