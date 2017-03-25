@@ -1,11 +1,8 @@
-import game
+import game as spyfall
 
-test = game.Game()
+sf = spyfall.Game()
 
-test.get_locations('spyfall_locations.json')
+sf.get_location('spyfall_locations.json')
 
-why = test.locations_file
-
-hello = test.get_roles('Beach')
-
-print(hello)
+sf.location_names
+role = sf.get_roles('Airplane')
