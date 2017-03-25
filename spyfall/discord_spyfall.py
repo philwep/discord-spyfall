@@ -35,11 +35,19 @@ async def on_message(message):
         game.join_player(message_author_id)
         await bot.send_message(message.channel, "<@%s> has joined the game." % message_author_id)
 
+        print(message_author)
+
         print(game.players)
     if message_content.startswith(bot_trigger + 'leave'):
         game.leave_player(message_author_id)
         await bot.send_message(message.channel, "<@%s> has left the game." % message_author_id)
 
         print(game.players)
-        
+
+
+    if message_content.startswith(bot_trigger + 'startgame'):
+        game.start_game()
+
+        for player in game.players:
+            await bot.send_message(235215311144484864, "Name: <@%s>\n Role:%s" %(player.name, player.role))
 bot.run(bot_token)
