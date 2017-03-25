@@ -41,11 +41,23 @@
             "Roles":[
                 "Priest",
                 "Beggar",
-                "sinner",
+                "Sinner",
                 "Tourist",
                 "Sponsor",
                 "Choir Member",
                 "Father"
+            ]
+        },
+        {
+            "Location":"Circus Tent",
+            "Roles":[
+                "Acrobat",
+                "Animal Trainer",
+                "Magician",
+                "Fire Eater",
+                "Clown",
+                "Juggler",
+                "Visitor"
             ]
         }
     ]

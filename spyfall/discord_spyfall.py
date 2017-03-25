@@ -28,9 +28,10 @@ def embeded_message(role, location):
         content = "Your Role is ---> **SPY** \n The Location is ---> *NOTGIVEN*"
         return discord.Embed(title=title, description=content)
     elif role != "Spy":
-        title = "You are not the **Spy**"
+        title = "Spyfall - Game"
         content = "Your role is ---> **%s** \nThe location is ---> *%s*" % (role, location)
         return discord.Embed(title=title, description=content)
+
 @bot.event
 async def on_message(message):
     message_delete = message
@@ -54,6 +55,7 @@ async def on_message(message):
         print(game.players)
     if message_content.startswith(bot_trigger + 'startgame'):
         game.start_game()
+
         for player in game.players:
             await bot.send_message(discord.User(id=player.name), embed=embeded_message(player.role, game._game_data['locations'][game.location]['Location']))
 bot.run(bot_token)

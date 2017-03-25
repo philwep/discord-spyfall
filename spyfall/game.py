@@ -22,6 +22,9 @@ class Game:
         # locations, roles and other json settings
         self._game_data = None
 
+        # location list
+        self.loc_list = []
+
     # reveal identity of the spy
     def end_game(self):
         for player in self.players:
@@ -78,6 +81,16 @@ class Game:
             self.assign_location()
             self.assign_roles()
 
+    # removes any pre-existing roles that has been asigned, if exists
+    def clear_roles(self):
+        for player in self.players:
+            player.role = None
+
+    def get_locations(self):
+        del self.loc_list[:]
+        for i in range(len(self._game_data['locations'])):
+            self.loc_list.append(self._game_data['locations'][i]['Location'])
+
     # update the _game_data variable with contents of LOCATIONS_FILE
     def _load_data(self):
         if os.path.exists(self.LOCATIONS_FILE):
@@ -91,6 +104,8 @@ class Game:
     def start_game(self):
         if (len(self.players) > 0):
             self._load_data()
+            self.get_locations()
+            self.clear_roles()
             self.assign_location()
             self.assign_roles()
         else:
