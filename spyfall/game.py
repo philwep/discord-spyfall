@@ -30,14 +30,23 @@ class Game:
 
     # add player to game
     def join_player(self, discord_user_name):
-        player = Player(discord_user_name)
-        self.players.append(player)
+        player_exists = False
+        for player in self.players:
+            if player.name == discord_user_name:
+                player_exists = True
+
+        if player_exists:
+            print ("That player is already in the game!")
+            # Make this send the message so the people can see it
+        else:
+            player = Player(discord_user_name)
+            self.players.append(player)
 
     # remove player from game
     def leave_player(self, discord_user_name):
-        player = Player(discord_user_name)
-        if player in self.players:
-            self.players.remove(player)
+        for i in range(len(players)):
+            if player.name ==  discord_user_name:
+                self.players.remove(i)
 
     # choose a random location
     def assign_location(self):

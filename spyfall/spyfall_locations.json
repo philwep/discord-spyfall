@@ -10,19 +10,19 @@
 		        "Security Guard",
 		        "Manager"
         	]
-        },
-        {
-			"Location":"Airplane",
-			"Roles":[
-		        "First Class Passenger",
-		        "Air Marshall",
-		        "Mechanic",
-		        "Air Hostess",
-		        "Flight Attendant",
-		        "Co-Pilot",
-		        "Captain",
-		        "Econonmy Class Passenger"
-        	]
-        }
+      },
+      {
+    			"Location":"Airplane",
+    			"Roles":[
+    		        "First Class Passenger",
+    		        "Air Marshall",
+    		        "Mechanic",
+    		        "Air Hostess",
+    		        "Flight Attendant",
+    		        "Co-Pilot",
+    		        "Captain",
+    		        "Econonmy Class Passenger"
+            ]
+      }
 	]
 }
