@@ -11,3 +11,6 @@ print("Location: %s" % game._game_data['locations'][game.location]['Location'])
 print("Players:")
 for player in game.players:
     print("\tName:%s Role:%s" % (player.name, player.role))
+
+
+print("hello")
