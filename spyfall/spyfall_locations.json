@@ -49,5 +49,7 @@
         "Manager",
         "Assistant to the manager",
         "Unwanted Guest",
+        "Receptionist",
+        "Bartender"
     ]
 }
