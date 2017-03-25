@@ -53,9 +53,41 @@ async def on_message(message):
         await bot.send_message(message.channel, "<@%s> has left the game." % message_author_id)
 
         print(game.players)
+    if message_content.startswith(bot_trigger + 'purge'):
+        game.purge()
+        await bot.send_message(message.channel, "All users purged!")
+
+        print(game.players)
+
     if message_content.startswith(bot_trigger + 'startgame'):
         game.start_game()
 
         for player in game.players:
             await bot.send_message(discord.User(id=player.name), embed=embeded_message(player.role, game._game_data['locations'][game.location]['Location']))
+
+        await bot.send_message(message.channel, "The game has started!")
+
+        location_title = "Spyfall - Locations List"
+        location_content = ''
+        for i in game.loc_list:
+            location_content += "**%s**\n" % i
+
+        loc_embed = discord.Embed(title=location_title, description=location_content)
+
+        locs = await bot.send_message(message.channel, embed=loc_embed)
+
+        i = 0
+        while i != 1:
+            await asyncio.sleep(480) # 8 minutes
+            i += 1
+        await bot.delete_message(locs)
+
+    if message_content.startswith(bot_trigger + 'players'):
+        playing = 'Current Players:\n'
+        for player in game.players:
+            playing += "<@%s>" % player.name
+            playing += ' '
+
+        await bot.send_message(message.channel, playing)
+
 bot.run(bot_token)

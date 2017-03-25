@@ -91,6 +91,9 @@ class Game:
         for i in range(len(self._game_data['locations'])):
             self.loc_list.append(self._game_data['locations'][i]['Location'])
 
+    def purge(self):
+        del self.players
+
     # update the _game_data variable with contents of LOCATIONS_FILE
     def _load_data(self):
         if os.path.exists(self.LOCATIONS_FILE):
