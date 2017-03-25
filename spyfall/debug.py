@@ -9,8 +9,6 @@ game.start_game()
 print("Location: %s" % game._game_data['locations'][game.location]['Location'])
 print("Roles: %s" % game._game_data['locations'][game.location]['Roles'])
 
-print(game._game_data['locations'])
-
 
 print("Players:")
 for player in game.players:
