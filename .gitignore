@@ -48,3 +48,5 @@ Temporary Items
 config.json
 *.pyc
 spyfall/test.py
+spyfall/__pycache__/game.cpython-35.pyc
+*.pyc
