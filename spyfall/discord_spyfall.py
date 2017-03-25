@@ -41,5 +41,5 @@ async def on_message(message):
         await bot.send_message(message.channel, "<@%s> has left the game." % message_author_id)
 
         print(game.players)
-
+        
 bot.run(bot_token)
