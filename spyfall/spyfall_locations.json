@@ -1,28 +1,27 @@
 {
     "locations":[
-    	{
-    		"Location":"The Bank",
-    		"Roles":[
-		        "Robber",
-		        "Teller",
-		        "Civilian",
-		        "Armored Truck Driver",
-		        "Security Guard",
-		        "Manager"
-        	]
-      },
-      {
-    			"Location":"Airplane",
-    			"Roles":[
-    		        "First Class Passenger",
-    		        "Air Marshall",
-    		        "Mechanic",
-    		        "Air Hostess",
-    		        "Flight Attendant",
-    		        "Co-Pilot",
-    		        "Captain",
-    		        "Econonmy Class Passenger"
+        {
+            "Location":"The Bank",
+            "Roles":[
+                "Robber",
+                "Teller",
+                "Civilian",
+                "Armored Truck Driver",
+                "Security Guard",
+                "Manager"
             ]
-      }
-	]
+        },
+        {
+            "Location":"Airplane",
+            "Roles":[
+                "First Class Passenger",
+                "Air Marshall",
+                "Air Hostess",
+                "Flight Attendant",
+                "Co-Pilot",
+                "Captain",
+                "Economy Class Passenger"
+            ]
+        }
+    ]
 }
