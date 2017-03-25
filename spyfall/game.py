@@ -7,10 +7,11 @@ import json
 # object to keep track of game state
 class Game:
 
-    # global variable for config location
-    LOCATIONS_FILE = 'spyfall_locations.json'
-
     def __init__(self):
+
+        # variable for config location
+        self.LOCATIONS_FILE = 'spyfall_locations.json'
+
 
         # list of player objects
         self.players = []
@@ -68,18 +69,19 @@ class Game:
 
     # update the _game_data variable with contents of LOCATIONS_FILE
     def _load_data(self):
-        if os.path.exists(LOCATIONS_FILE):
-            with open(LOCATIONS_FILE, 'r') as locations_file:
+        if os.path.exists(self.LOCATIONS_FILE):
+            with open(self.LOCATIONS_FILE, 'r') as locations_file:
                 self._game_data = json.load(locations_file)
             locations_file.close()
-
-            for location in self.locations_file:
-                self.location_names.append(location)
         else:
             print("The file %s does not exist or cannot be opened" % LOCATIONS_FILE)
             sys.exit(-1)
 
     def start_game(self):
-        self._load_data()
-        self.assign_location()
-        self.assign_roles()
+        if (len(self.players) > 0):
+            self._load_data()
+            self.assign_location()
+            self.assign_roles()
+        else:
+            print("Must add players first")
+            # REPLACE THIS TO SEND A DISCORD MESSAGE INSTEAD
