@@ -44,9 +44,9 @@ class Game:
 
     # remove player from game
     def leave_player(self, discord_user_name):
-        for i in range(len(self.players)):
-            if self.players[i] ==  discord_user_name:
-                self.players.remove(i)
+        for i in range(len(self.players)-1):
+            if self.players[i].name ==  discord_user_name:
+                del self.players[i]
 
     # choose a random location
     def assign_location(self):
