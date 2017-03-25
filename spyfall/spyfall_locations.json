@@ -22,6 +22,31 @@
                 "Captain",
                 "Economy Class Passenger"
             ]
+        },
+        {
+            "Location":"Beach",
+            "Roles":[
+                "Beach Waitress",
+                "Kite Surfer",
+                "Lifeguard",
+                "Thief",
+                "Beach Photographer",
+                "Ice Cream Truck Driver",
+                "Beach Goer",
+                "Beach Stand Worker"
+            ]
+        },
+        {
+            "Location":"Catheral / Church",
+            "Roles":[
+                "Priest",
+                "Beggar",
+                "sinner",
+                "Tourist",
+                "Sponsor",
+                "Choir Member",
+                "Father"
+            ]
         }
     ]
 }
