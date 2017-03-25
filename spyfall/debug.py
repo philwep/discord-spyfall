@@ -13,3 +13,6 @@ game.leave_player("bob")
 print("Players:")
 for player in game.players:
     print("\tName:%s Role:%s" % (player.name, player.role))
+
+
+print("hello")
