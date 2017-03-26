@@ -92,7 +92,7 @@ class Game:
             self.loc_list.append(self._game_data['locations'][i]['Location'])
 
     def purge(self):
-        del self.players
+        del self.players[:]
 
     # update the _game_data variable with contents of LOCATIONS_FILE
     def _load_data(self):
