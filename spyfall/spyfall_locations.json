@@ -59,6 +59,369 @@
                 "Juggler",
                 "Visitor"
             ]
+        },
+        {
+            "Location":"Corporate Party",
+            "Roles":[
+                "Entertainer",
+                "Manager",
+                "Unwanted Guest",
+                "Owner",
+                "Secretary",
+                "Delivery Boy",
+                "Accountant"
+            ]
+        },
+        {
+            "Location":"Crusader Army",
+            "Roles":[
+                "Monk",
+                "Imprisoned Sacracen",
+                "Servant",
+                "Bishop",
+                "Squire",
+                "Archer",
+                "Knight"
+            ]
+        },
+        {
+            "Location":"Casino",
+            "Roles":[
+                "Dealer",
+                "Bartender",
+                "Head Security Guard",
+                "Bouncer",
+                "Manager",
+                "Hustler",
+                "Gambler"
+            ]
+        },
+        {
+            "Location":"Day Spa",
+            "Roles":[
+                "Stylist",
+                "Masseuse",
+                "Manicurist",
+                "Makeup Artist",
+                "Dermatologist",
+                "Beautician",
+                "Customer"
+            ]
+        },
+        {
+            "Location":"Embassy",
+            "Roles":[
+                "Security Guard",
+                "Ambassadar",
+                "Secretary",
+                "Tourist",
+                "Refugee",
+                "Diplomat",
+                "Government Official"
+            ]
+        },
+        {
+            "Location":"Hospital",
+            "Roles":[
+                "Nurse",
+                "Doctor",
+                "Anthesiologist",
+                "Intern",
+                "Therapist",
+                "Surgeon",
+                "Patient",
+                "Radiology Technician"
+            ]
+        },
+        {
+            "Location":"Hotel",
+            "Roles":[
+                "Doorman",
+                "Security Guard",
+                "Manager",
+                "Housekeeper",
+                "Bartender",
+                "Bellman",
+                "Customer"
+            ]
+        },
+        {
+            "Location":"Military Base",
+            "Roles":[
+                "Deserter",
+                "Colonel",
+                "Private",
+                "Medic",
+                "Sniper",
+                "Officier",
+                "Tank Engineer",
+                "Soldier"
+            ]
+        },
+        {
+            "Location":"Movie Studio",
+            "Roles":[
+                "Stunt Man",
+                "Sound Engineer",
+                "Camera Man",
+                "Director",
+                "Costume Artist",
+                "Producer",
+                "Actor"
+            ]
+        },
+        {
+            "Location":"Ocean Liner",
+            "Roles":[
+                "Cook",
+                "Captain",
+                "Bartender",
+                "Musician",
+                "Waiter",
+                "Mechanic",
+                "Rich Passenger",
+                "Passenger"
+            ]
+        },
+        {
+            "Location":"Passenger Train",
+            "Roles":[
+                "Mechanic",
+                "Border Patrol",
+                "Train Attendant",
+                "Restaurant Chef",
+                "Train Driver",
+                "Stoker",
+                "Passenger"
+            ]
+        },
+        {
+            "Location":"Pirate Ship",
+            "Roles":[
+                "Cook",
+                "Slave",
+                "Cannoneer",
+                "Tied Up Prisoner",
+                "Cabin Boy",
+                "Brave Captain",
+                "Sailor",
+                "Parrot"
+            ]
+        },
+        {
+            "Location":"Polar Station",
+            "Roles":[
+                "Medic",
+                "Expedition Leader",
+                "Biologist",
+                "Radioman",
+                "Hydrologist",
+                "Meteorologist",
+                "Geologist"
+            ]
+        },
+        {
+            "Location":"Police Station",
+            "Roles":[
+                "Detective",
+                "Lawyer",
+                "Journalist",
+                "Criminal",
+                "Archivist",
+                "Patrol Officier",
+                "Police Officier"
+            ]
+        },
+        {
+            "Location":"Court House",
+            "Roles":[
+                "Criminal",
+                "Lawyer",
+                "Planktiff",
+                "Defendant",
+                "Criminal",
+                "Judge",
+                "Baliff",
+                "Jury Member",
+                "Civilian",
+                "Guard"
+            ]
+        },
+        {
+            "Location":"Restaurant",
+            "Roles":[
+                "Musician",
+                "Bouncher",
+                "Hostess",
+                "Head Chef",
+                "Sous Chef",
+                "Line Chef",
+                "Food Critic",
+                "Waiter",
+                "Customer"
+            ]
+        },
+        {
+            "Location":"School",
+            "Roles":[
+                "Gym Teacher",
+                "English Teacher",
+                "Math Teacher",
+                "Principle",
+                "Faculty Staff",
+                "Cafertia Lady",
+                "Janitor",
+                "Student"
+            ]
+        },
+        {
+            "Location":"Service Station",
+            "Roles":[
+                "Manager",
+                "Tire Specialist",
+                "Biker",
+                "Car Owner",
+                "Car Was Operator",
+                "Electrician",
+                "Auto Mechanic"
+            ]
+        },
+        {
+            "Location":"Space Station",
+            "Roles":[
+                "Engineer",
+                "Alien",
+                "Pilot",
+                "Commander",
+                "Scientist",
+                "Doctor",
+                "Space Tourist"
+            ]
+        },
+        {
+            "Location":"Submarine",
+            "Roles":[
+                "Cook",
+                "Commander",
+                "Sonar Technician",
+                "Electronics Technician",
+                "Radioman",
+                "Navigator",
+                "Sailor"
+            ]
+        },
+        {
+            "Location":"Supermarket",
+            "Roles":[
+                "Cashier",
+                "Butcher",
+                "Janitor",
+                "Security Guard",
+                "Food Sample Demonstrator",
+                "Shelf Stocker",
+                "Customer"
+            ]
+        },
+        {
+            "Location":"Theater",
+            "Roles":[
+                "Coat Check Lady",
+                "Prompter",
+                "Cashier",
+                "Director",
+                "Actor",
+                "Crew Man",
+                "Janitor",
+                "Student"
+            ]
+        },
+        {
+            "Location":"University",
+            "Roles":[
+                "Graduate Student",
+                "Professor",
+                "The Dean",
+                "Janitor",
+                "Student",
+                "Psychologist",
+                "Maintenance Man",
+                "Librarian",
+                "Tech Support"
+            ]
+        },
+        {
+            "Location":"World War II Squad",
+            "Roles":[
+                "Resistance Fighter",
+                "Radioman",
+                "Scout",
+                "Medic",
+                "Cook",
+                "Imprisoned Nazi",
+                "Soldier"
+            ]
+        },
+        {
+            "Location":"House",
+            "Roles":[
+                "Glass Window",
+                "Door",
+                "Light Switch",
+                "Toilet",
+                "Trashcan",
+                "Refridgerator",
+                "Chimney",
+                "Stove",
+                "Sink"
+            ]
+        },
+        {
+            "Location":"Brothel",
+            "Roles":[
+                "Whore",
+                "Hooker",
+                "Pervert",
+                "Bouncher",
+                "Bartender",
+                "Manager",
+                "Janitor",
+                "Stripper"
+            ]
+        },
+        {
+            "Location":"Temple",
+            "Roles":[
+                "Monk",
+                "Buddhist",
+                "Prayer",
+                "Disciple",
+                "Cook",
+                "Teacher"
+            ]
+        },
+        {
+            "Location":"Gym",
+            "Roles":[
+                "Buff Guy",
+                "Sweaty Guy",
+                "Try-Hard Guy",
+                "Yoga Pants Wearing Girl",
+                "Janitor",
+                "Old Guy In The Shower"
+            ]
+        },
+        {
+            "Location":"Maid Cafe",
+            "Roles":[
+                "Maid",
+                "Waiter",
+                "Waitress",
+                "Customer",
+                "Singer",
+                "Cook",
+                "Weeaboo",
+                "Janitor"
+            ]
         }
     ]
 }
