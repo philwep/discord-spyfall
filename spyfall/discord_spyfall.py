@@ -90,4 +90,18 @@ async def on_message(message):
 
         await bot.send_message(message.channel, playing)
 
+    if message_content.startswith(bot_trigger + 'reveal'):
+        reveal_title = 'Spyfall - Reveal'
+        reveal_location = 'The Location Was --> %s\n' % (game._game_data['locations'][game.location]['Location'])
+
+        reveal_players = ''
+        for player in game.players:
+            reveal_players += '<@%s> --> %s\n' % (player.name, player.role)
+
+        reveal_content = reveal_location + reveal_players
+
+        reveal_embed = discord.Embed(title=reveal_title, description=reveal_content)
+
+        await bot.send_message(message.channel, embed=reveal_embed)
+
 bot.run(bot_token)
