@@ -12,7 +12,6 @@ class Game:
         # variable for config location
         self.LOCATIONS_FILE = 'spyfall_locations.json'
 
-
         # list of player objects
         self.players = []
 
