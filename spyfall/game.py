@@ -24,11 +24,18 @@ class Game:
         # location list
         self.loc_list = []
 
+        # time left in seconds
+        self.time = 480
+
     # reveal identity of the spy
     def end_game(self):
         for player in self.players:
             if (player.role == "spy"):
                 print("The spy was %s!" % player.discord_user_name)
+
+        # Reset time back to default (8 minutes)
+        # TODO: This should be made configurable.
+        self.time = 480
 
     # add player to game
     def join_player(self, discord_user_name):
@@ -113,3 +120,23 @@ class Game:
         else:
             print("Must add players first")
             # REPLACE THIS TO SEND A DISCORD MESSAGE INSTEAD
+
+
+    # === GAME TIME FUNCTIONS == #
+    def get_formatted_time(self):
+        """
+        Converts the currently stored time (seconds) to a formatted string of minutes and seconds.
+
+        :return: formatted time string in {minutes}:{seconds}
+        """
+        minutes, seconds = divmod(self.time, 60)
+        return "Time Left - {}:{:02d}".format(minutes, seconds)
+
+    def tick(self):
+        """
+        Ticks down the timer by 1 second.
+
+        :return: True if the timer has reached zero
+        """
+        self.time -= 1
+        return self.time <= 0

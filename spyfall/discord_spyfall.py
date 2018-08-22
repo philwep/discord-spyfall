@@ -76,11 +76,17 @@ async def on_message(message):
 
         locs = await bot.send_message(message.channel, embed=loc_embed)
 
-        i = 0
-        while i != 1:
-            await asyncio.sleep(480) # 8 minutes
-            i += 1
+        # Create a simple timer to time the game.
+        time = await bot.send_message(message.channel, game.get_formatted_time())
+
+        while not game.tick():
+            await bot.edit_message(time, game.get_formatted_time())
+            await asyncio.sleep(1)
+
+        # Loop exited, game has run out of time. End it and clear messages.
         await bot.delete_message(locs)
+        await bot.delete_message(time)
+        await bot.send_message(message.channel, "Time is up. Vote who you think the spy is now.")
 
     if message_content.startswith(bot_trigger + 'players'):
         playing = 'Current Players:\n'
@@ -103,5 +109,6 @@ async def on_message(message):
         reveal_embed = discord.Embed(title=reveal_title, description=reveal_content)
 
         await bot.send_message(message.channel, embed=reveal_embed)
+        game.end_game()
 
 bot.run(bot_token)
