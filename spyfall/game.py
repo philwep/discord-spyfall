@@ -24,6 +24,9 @@ class Game:
         # location list
         self.loc_list = []
 
+        # game is live only when it is started, by default it is not
+        self.is_live = False
+
         # time left in seconds
         self.time = 480
 
@@ -36,6 +39,7 @@ class Game:
         # Reset time back to default (8 minutes)
         # TODO: This should be made configurable.
         self.time = 480
+        self.is_live = False
 
     # add player to game
     def join_player(self, discord_user_name):
@@ -117,6 +121,7 @@ class Game:
             self.clear_roles()
             self.assign_location()
             self.assign_roles()
+            self.is_live = True
         else:
             print("Must add players first")
             # REPLACE THIS TO SEND A DISCORD MESSAGE INSTEAD
@@ -136,7 +141,7 @@ class Game:
         """
         Ticks down the timer by 1 second.
 
-        :return: True if the timer has reached zero
+        :return: True if the timer is still ticking
         """
         self.time -= 1
-        return self.time <= 0
+        return self.time > 0

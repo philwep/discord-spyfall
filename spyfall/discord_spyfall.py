@@ -79,14 +79,18 @@ async def on_message(message):
         # Create a simple timer to time the game.
         time = await bot.send_message(message.channel, game.get_formatted_time())
 
-        while not game.tick():
+        while game.is_live and game.tick():
             await bot.edit_message(time, game.get_formatted_time())
             await asyncio.sleep(1)
 
-        # Loop exited, game has run out of time. End it and clear messages.
+        # Loop exited, game has ended or has run out of time. End it and clear messages.
         await bot.delete_message(locs)
         await bot.delete_message(time)
-        await bot.send_message(message.channel, "Time is up. Vote who you think the spy is now.")
+
+        # If game is still live, it means the spy has not been revealed yet even though the time is up.
+        # Players still have a last chance to vote who the spy is before ending the game.
+        if game.is_live:
+            await bot.send_message(message.channel, "Time's up! Vote who you think the spy is now.")
 
     if message_content.startswith(bot_trigger + 'players'):
         playing = 'Current Players:\n'
