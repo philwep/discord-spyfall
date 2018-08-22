@@ -24,11 +24,24 @@ class Game:
         # location list
         self.loc_list = []
 
+        # game is live only when it is started, by default it is not
+        self.is_live = False
+
+        # the amount of time in seconds available in each round (default: 480 seconds or 8 minutes)
+        self.round_time = 480
+
+        # time left in seconds
+        self.time_left = self.round_time
+
     # reveal identity of the spy
     def end_game(self):
         for player in self.players:
             if (player.role == "spy"):
                 print("The spy was %s!" % player.discord_user_name)
+
+        # Reset time
+        self.time_left = self.round_time
+        self.is_live = False
 
     # add player to game
     def join_player(self, discord_user_name):
@@ -110,6 +123,38 @@ class Game:
             self.clear_roles()
             self.assign_location()
             self.assign_roles()
+            self.is_live = True
         else:
             print("Must add players first")
             # REPLACE THIS TO SEND A DISCORD MESSAGE INSTEAD
+
+    # ========================= #
+    #    GAME TIME FUNCTIONS    #
+    # ========================= #
+    def set_time(self, time):
+        """
+        Sets the game time without affecting the current round's elapsed time.
+
+        :param time: time in seconds
+        """
+        self.round_time = time
+        if not self.is_live:
+            self.time_left = time
+
+    def get_formatted_time(self):
+        """
+        Converts the currently stored time (seconds) to a formatted string of minutes and seconds.
+
+        :return: formatted time string in {minutes}:{seconds}
+        """
+        minutes, seconds = divmod(self.time_left, 60)
+        return "Time Left - {}:{:02d}".format(minutes, seconds)
+
+    def tick(self):
+        """
+        Ticks down the timer by 1 second.
+
+        :return: True if the timer is still ticking, False if the timer reaches zero
+        """
+        self.time_left -= 1
+        return self.time_left > 0

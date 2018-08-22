@@ -1,6 +1,6 @@
 {
     "discord":{
-        "token": "YOURTOKENKEYHERE!"
+        "token": "YOURTOKENKEYHERE!",
         "trigger": "."
     },
     "other":{

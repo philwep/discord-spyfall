@@ -60,27 +60,42 @@ async def on_message(message):
         print(game.players)
 
     if message_content.startswith(bot_trigger + 'startgame'):
-        game.start_game()
+        if game.is_live:
+            await bot.send_message(message.channel, 'Game is still ongoing.')
+        else:
+            game.start_game()
 
-        for player in game.players:
-            await bot.send_message(discord.User(id=player.name), embed=embeded_message(player.role, game._game_data['locations'][game.location]['Location']))
+            for player in game.players:
+                await bot.send_message(discord.User(id=player.name),
+                                       embed=embeded_message(player.role,
+                                                             game._game_data['locations'][game.location]['Location']))
 
-        await bot.send_message(message.channel, "The game has started!")
+            await bot.send_message(message.channel, "The game has started!")
 
-        location_title = "Spyfall - Locations List"
-        location_content = ''
-        for i in game.loc_list:
-            location_content += "**%s**\n" % i
+            location_title = "Spyfall - Locations List"
+            location_content = ''
+            for i in game.loc_list:
+                location_content += "**%s**\n" % i
 
-        loc_embed = discord.Embed(title=location_title, description=location_content)
+            loc_embed = discord.Embed(title=location_title, description=location_content)
 
-        locs = await bot.send_message(message.channel, embed=loc_embed)
+            locs = await bot.send_message(message.channel, embed=loc_embed)
 
-        i = 0
-        while i != 1:
-            await asyncio.sleep(480) # 8 minutes
-            i += 1
-        await bot.delete_message(locs)
+            # Create a simple timer to time the game.
+            time = await bot.send_message(message.channel, game.get_formatted_time())
+
+            while game.is_live and game.tick():
+                await bot.edit_message(time, game.get_formatted_time())
+                await asyncio.sleep(1)
+
+            # Loop exited, game has ended or has run out of time. End it and clear messages.
+            await bot.delete_message(locs)
+            await bot.delete_message(time)
+
+            # If game is still live, it means the spy has not been revealed yet even though the time is up.
+            # Players still have a last chance to vote who the spy is before ending the game.
+            if game.is_live:
+                await bot.send_message(message.channel, "Time's up! Vote who you think the spy is now.")
 
     if message_content.startswith(bot_trigger + 'players'):
         playing = 'Current Players:\n'
@@ -103,5 +118,22 @@ async def on_message(message):
         reveal_embed = discord.Embed(title=reveal_title, description=reveal_content)
 
         await bot.send_message(message.channel, embed=reveal_embed)
+        game.end_game()
+
+    if message_content.startswith(bot_trigger + 'settings'):
+        command = message_content.split()
+        setting = command[1]
+        value = command[2]
+
+        if setting == 'time':
+            try:
+                game.set_time(int(value))
+                await bot.send_message(message.channel, 'Game time set to {} seconds.'.format(game.round_time))
+            except ValueError:
+                # Show error message if an invalid integer was entered for time.
+                await bot.send_message(message.channel, 'Invalid value specified for "{}".'.format(setting))
+        else:
+            await bot.send_message(message.channel, 'Invalid settings command.')
+
 
 bot.run(bot_token)
