@@ -115,4 +115,20 @@ async def on_message(message):
         await bot.send_message(message.channel, embed=reveal_embed)
         game.end_game()
 
+    if message_content.startswith(bot_trigger + 'settings'):
+        command = message_content.split()
+        setting = command[1].lower()
+        value = command[2].lower()
+
+        if setting == 'time':
+            try:
+                game.set_time(int(value))
+                await bot.send_message(message.channel, 'Game time set to {} seconds.'.format(game.round_time))
+            except ValueError:
+                # Show error message if an invalid integer was entered for time.
+                await bot.send_message(message.channel, 'Invalid value specified for "{}".'.format(setting))
+        else:
+            await bot.send_message(message.channel, 'Invalid settings command.')
+
+
 bot.run(bot_token)
