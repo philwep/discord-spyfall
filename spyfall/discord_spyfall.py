@@ -122,8 +122,8 @@ async def on_message(message):
 
     if message_content.startswith(bot_trigger + 'settings'):
         command = message_content.split()
-        setting = command[1].lower()
-        value = command[2].lower()
+        setting = command[1]
+        value = command[2]
 
         if setting == 'time':
             try:
